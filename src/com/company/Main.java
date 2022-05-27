@@ -15,28 +15,20 @@ public class Main {
             if (dir.mkdir())
                 sb.append("Создан каталог ").append(dir.getName()).append("\n");
         };
+        File[] files = {new File("C://Games"),
+                new File("C://Games", "src"),
+                new File("C://Games", "res"),
+                new File("C://Games", "savegames"),
+                new File("C://Games", "temp"),
+                new File("C://Games//src", "main"),
+                new File("C://Games//src", "test"),
+                new File("C://Games//res", "drawables"),
+                new File("C://Games//res", "vectors"),
+                new File("C://Games//res", "icons")};
 
-        File gamesDir = new File("C://Games");
-        File srcDir = new File("C://Games", "src");
-        File resDir = new File("C://Games", "res");
-        File saveGamesDir = new File("C://Games", "savegames");
-        File tempDir = new File("C://Games", "temp");
-        File mainDir = new File("C://Games//src", "main");
-        File testDir = new File("C://Games//src", "test");
-        File drawablesDir = new File("C://Games//res", "drawables");
-        File vectorsDir = new File("C://Games//res", "vectors");
-        File iconsDir = new File("C://Games//res", "icons");
-
-        createDir.accept(gamesDir);
-        createDir.accept(srcDir);
-        createDir.accept(resDir);
-        createDir.accept(saveGamesDir);
-        createDir.accept(mainDir);
-        createDir.accept(tempDir);
-        createDir.accept(testDir);
-        createDir.accept(drawablesDir);
-        createDir.accept(vectorsDir);
-        createDir.accept(iconsDir);
+        for(int i = 0; i < files.length; i++) {
+            createDir.accept(files[i]);
+        }
 
         try {
             File mainFile = new File("C://Games//src//main", "Main.java");
